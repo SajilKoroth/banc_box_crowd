@@ -1,10 +1,10 @@
 module BancBoxCrowd
   class Connection
 
-    def initialize
-      @key = BancBoxCrowd::Config.api_key
-      @secret = BancBoxCrowd::Config.api_secret
-      @base_url = BancBoxCrowd::Config.base_url
+    def initialize(options={})
+      @key = options[:api_key] || BancBoxCrowd::Config.api_key
+      @secret = options[:api_secret] || BancBoxCrowd::Config.api_secret
+      @base_url = options[:base_url] || BancBoxCrowd::Config.base_url
     end
 
     # Perform an HTTP POST request

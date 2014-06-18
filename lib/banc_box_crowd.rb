@@ -2,7 +2,7 @@ require 'faraday'
 require 'faraday_middleware'
 
 files = [
-  'id', 'api', 'config', 'connection', 'error'
+  'id', 'api', 'config', 'connection', 'error', 'client'
 ]
 
 files.each do |file|
@@ -18,7 +18,7 @@ module BancBoxCrowd
     Config
   end
 
-  def self.connection
-    @connection ||= BancBoxCrowd::Connection.new
-  end
+  #def self.connection
+    #@connection ||= BancBoxCrowd::Connection.new
+  #end
 end
