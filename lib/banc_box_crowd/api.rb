@@ -19,6 +19,10 @@ module BancBoxCrowd
 		def submit_agreement options
 			get_response(:post, 'submitAgreement', options)
 		end
+		
+		def confirm_wire_transfer options
+			get_response(:post, 'confirmWireTransfer', options)
+		end
 
 		def verify_identity options
 			data = {
