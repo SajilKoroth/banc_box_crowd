@@ -42,8 +42,7 @@ module BancBoxCrowd
 
 		def fund_account options
 			data = {
-				:link_bank_account => boolean_to_y_n(options.delete(:link_bank_account)),
-				:submit_timestamp => formatted_time(options.delete(:submit_timestamp)),
+				:link_bank_account => boolean_to_y_n(options.delete(:link_bank_account))
 			}
 			data.merge! options
 			get_response(:post, 'fundAccount', data)
