@@ -37,8 +37,8 @@ module BancBoxCrowd
 		end
 		
 		def get_investor_details options
-      get_response(:post, 'getInvestorDetails', options)
-    end
+			get_response(:post, 'getInvestorDetails', options)
+		end
 
 		def fund_account options
 			data = {
@@ -56,13 +56,18 @@ module BancBoxCrowd
 			get_response(:post, 'fundEscrow', data)
 		end
 
-   def get_escrow_details options
-      data = {
-        :fund_on_availability => boolean_to_y_n(options.delete(:fund_on_availability))
-      }
-      data.merge! options
-      get_response(:post, 'getEscrowDetails', options)
-    end
+		def get_escrow_details options
+		  data = {
+			:fund_on_availability => boolean_to_y_n(options.delete(:fund_on_availability))
+		  }
+	      data.merge! options
+		  get_response(:post, 'getEscrowDetails', options)
+		end
+		
+		def disburse_escrow options
+			get_response(:post, 'disburseEscrow', options)
+		end
+		
 		private
 
 		def formatted_time(time)
