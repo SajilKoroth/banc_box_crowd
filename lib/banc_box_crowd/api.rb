@@ -66,7 +66,7 @@ module BancBoxCrowd
 		
 		def disburse_escrow options
 			data = {
-				:fund_on_availability => boolean_to_y_n(options.delete(:close_escrow_ disbursal))
+				:fund_on_availability => boolean_to_y_n(options.delete(:close_escrow_disbursal))
 			}
 			data.merge! options
 			get_response(:post, 'disburseEscrow', options)
